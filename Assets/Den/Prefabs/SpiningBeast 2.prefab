@@ -149,6 +149,8 @@ GameObject:
   - component: {fileID: 6469966070481634809}
   - component: {fileID: 6469966070481634808}
   - component: {fileID: 6469966070481634811}
+  - component: {fileID: 6054212153565037409}
+  - component: {fileID: 2420990231828274207}
   m_Layer: 0
   m_Name: ere (1)
   m_TagString: Untagged
@@ -235,6 +237,46 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &6054212153565037409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469966070481634789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4973b651b485e47994f8f1b62b3060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mybody: {fileID: 0}
+  boostMultiplier: 2
+  baseforce: 5
+  minforce: 3
+  boostVelocity: 0
+  collided: {fileID: 0}
+  velocityBoost: 2
+  aiMultiplier: 5
+--- !u!114 &2420990231828274207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469966070481634789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4973b651b485e47994f8f1b62b3060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mybody: {fileID: 0}
+  boostMultiplier: 2
+  baseforce: 5
+  minforce: 3
+  boostVelocity: 0
+  collided: {fileID: 0}
+  velocityBoost: 2
+  aiMultiplier: 5
 --- !u!1 &6469966070858873695
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e60871113c3c64d880c6e84f0cb475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 50
   amplitude: 120
 --- !u!54 &6814700438942188699
 Rigidbody:
@@ -505,6 +547,8 @@ GameObject:
   - component: {fileID: 6469966071171957113}
   - component: {fileID: 6469966071171957112}
   - component: {fileID: 6469966071171957115}
+  - component: {fileID: 2432140941135405539}
+  - component: {fileID: 6167544594373502764}
   m_Layer: 0
   m_Name: ere (2)
   m_TagString: Untagged
@@ -591,6 +635,46 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &2432140941135405539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469966071171957093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4973b651b485e47994f8f1b62b3060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mybody: {fileID: 0}
+  boostMultiplier: 2
+  baseforce: 5
+  minforce: 3
+  boostVelocity: 0
+  collided: {fileID: 0}
+  velocityBoost: 2
+  aiMultiplier: 5
+--- !u!114 &6167544594373502764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469966071171957093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4973b651b485e47994f8f1b62b3060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mybody: {fileID: 0}
+  boostMultiplier: 2
+  baseforce: 5
+  minforce: 3
+  boostVelocity: 0
+  collided: {fileID: 0}
+  velocityBoost: 2
+  aiMultiplier: 5
 --- !u!1 &6469966071282051128
 GameObject:
   m_ObjectHideFlags: 0
