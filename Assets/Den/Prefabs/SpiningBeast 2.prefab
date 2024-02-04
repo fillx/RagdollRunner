@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 2113316053990292701}
   - component: {fileID: 6814700438942188699}
   m_Layer: 0
-  m_Name: SpiningBeast
+  m_Name: SpiningBeast 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
