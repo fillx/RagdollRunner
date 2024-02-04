@@ -76,37 +76,37 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if((Input.GetMouseButton(0) || Input.GetMouseButton(1)) &&  cameraFollow){
-            transform.rotation  = Quaternion.Euler(cam.transform.rotation.eulerAngles.x,cam.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-        }
-        else{
-            transform.rotation  = Quaternion.Euler(0,transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-        }
+        // if((Input.GetMouseButton(0) || Input.GetMouseButton(1)) &&  cameraFollow){
+        //     transform.rotation  = Quaternion.Euler(cam.transform.rotation.eulerAngles.x,cam.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        // }
+        // else{
+        //     transform.rotation  = Quaternion.Euler(0,transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        // }
 
 
-        if(Input.GetKey("w")&&!isLimp){
+        if(!isLimp){
             mybody.AddForce(transform.forward*currentSpeed*Time.fixedDeltaTime);
-            if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1) && cameraFollow){
-                transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles.x, cam.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);   
-            }
+            // if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1) && cameraFollow){
+            //     transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles.x, cam.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);   
+            // }
         }
         if(Input.GetKey("s")&&!isLimp){
             mybody.AddForce(transform.forward*-currentSpeed*Time.fixedDeltaTime);
-            if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1) && cameraFollow){
-                transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles.x, cam.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);   
-            }
+            // if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1) && cameraFollow){
+            //     transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles.x, cam.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);   
+            // }
         }
         if(Input.GetKey("d")&&!isLimp){
             mybody.AddForce(transform.right*currentSpeed*Time.fixedDeltaTime);
-            if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1) && cameraFollow){
-                transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles.x, cam.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);   
-            }
+            // if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1) && cameraFollow){
+            //     transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles.x, cam.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);   
+            // }
         }
         if(Input.GetKey("a")&&!isLimp){
             mybody.AddForce(transform.right*-currentSpeed*Time.fixedDeltaTime);
-            if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1) && cameraFollow){
-                transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles.x, cam.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);   
-            }
+            // if(!Input.GetMouseButton(0) && !Input.GetMouseButton(1) && cameraFollow){
+            //     transform.rotation  = Quaternion.Euler(transform.rotation.eulerAngles.x, cam.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);   
+            // }
         }
 
 
