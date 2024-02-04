@@ -182,10 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e60871113c3c64d880c6e84f0cb475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  angleLimits:
-    min: 0
-    max: 0
+  speed: 1
+  amplitude: 120
 --- !u!54 &6814700438942188699
 Rigidbody:
   m_ObjectHideFlags: 0

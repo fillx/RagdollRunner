@@ -1,14 +1,12 @@
 
 using System;
-using Den.Scripts;
 using UnityEngine;
 
 
 public class SpiningBeast : MonoBehaviour
 {
     [SerializeField] private float speed;
-
-    [SerializeField] private AngleLimits angleLimits;
+    [SerializeField] private float amplitude;
     
     private float _currentAngle;
     private float _angleVelocity;
@@ -19,7 +17,7 @@ public class SpiningBeast : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _currentAngle = angleLimits.min;
+        _currentAngle = -amplitude;
         _angleVelocity = 0;
         _direction = 1;
 
@@ -28,6 +26,12 @@ public class SpiningBeast : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Mathf.Sign(_currentAngle * _direction) > 0)
+            _direction *= -1;
         
+        _angleVelocity += _direction * speed * Time.fixedDeltaTime;
+
+        _currentAngle += _angleVelocity * Time.fixedDeltaTime;
+        _rigidbody.MoveRotation(Quaternion.Euler(0, 0, _currentAngle));
     }
 }
