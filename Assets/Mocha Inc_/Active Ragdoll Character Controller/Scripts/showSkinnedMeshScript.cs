@@ -14,14 +14,7 @@ namespace ActiveRagdoll
     // Start is called before the first frame update
     void Start()
     {
-        Color color = Random.ColorHSV();
-        isUsingSkinnedMesh = false;
-        skinnedMeshRenderer.enabled = false;
-        foreach(MeshRenderer meshRenderer in baseLimbRenderers)
-        {
-            meshRenderer.enabled = true;
-            meshRenderer.material.color = color;
-        }
+        
     }
 
     // Update is called once per frame

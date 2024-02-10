@@ -7,3 +7,5 @@ UserSettings/EditorUserSettings.asset
 .idea/
 *.dwlt
 Recordings/
+Build/
+obj/

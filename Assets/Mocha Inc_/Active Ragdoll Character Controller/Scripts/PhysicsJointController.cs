@@ -115,7 +115,7 @@ public class PhysicsJointController : MonoBehaviour
     void OnCollisionEnter(Collision collision){
         if(collision.relativeVelocity.magnitude >= RagdollForce){
             if(isBody){
-                ragdollController.GoLimpForSeconds(1.5f);
+                ragdollController.GoLimpForSeconds(6);
                 player.isLimp = true;
                 if(audioSource && !audioSource.isPlaying){
                     int i = (int)Random.Range(0,5);
@@ -141,7 +141,7 @@ public class PhysicsJointController : MonoBehaviour
                         audioSource.PlayOneShot(impactSound2);
                     }
                 }
-                ragdollController.GoLimpForSeconds(.5f);
+                ragdollController.GoLimpForSeconds(6);
                 player.isLimp = true;
                 return;
             }

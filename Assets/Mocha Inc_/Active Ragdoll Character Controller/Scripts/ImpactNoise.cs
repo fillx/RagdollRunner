@@ -21,7 +21,7 @@ public class ImpactNoise : MonoBehaviour
                 int i = (int)Random.Range(0,audioClips.Length-1);
                 if(randomVolumeEnabled){
                     float newVolume = collision.relativeVelocity.magnitude / MaxVolumeForce;
-                    Debug.Log("AudioSource: newVolume: " + newVolume+ " magnitude: " + collision.relativeVelocity.magnitude);
+                   // Debug.Log("AudioSource: newVolume: " + newVolume+ " magnitude: " + collision.relativeVelocity.magnitude);
                     audioSource.volume = newVolume;
                 }
 

@@ -27,22 +27,27 @@ public class ImpactBooster : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision){
-        if(collision.gameObject.GetComponent<Rigidbody>() == null || collision.gameObject.tag == "Player"){
+        if(collision.gameObject.GetComponent<Rigidbody>() == null || collision.gameObject.tag == "Player")
+        {
             return;
         }
 
         if(collision.relativeVelocity.magnitude >= minforce && collision.gameObject.GetComponent<AiRagdollBody>() != null){
             collision.gameObject.GetComponent<Rigidbody>().AddForce(-(transform.position-collision.gameObject.transform.position).normalized*baseforce*boostMultiplier * aiMultiplier, ForceMode.VelocityChange);
-            if(boostVelocity){
+            if(boostVelocity)
+            {
                 collided = collision.gameObject.GetComponent<Rigidbody>();
                 Invoke("boostvelocity",.1f);
+                Debug.Log("ImpactBooster1111111");
             }
         }
         else if(collision.relativeVelocity.magnitude >= minforce && collision.gameObject.tag == "grabbable"){
             collision.gameObject.GetComponent<Rigidbody>().AddForce(-(transform.position-collision.gameObject.transform.position).normalized*baseforce*boostMultiplier, ForceMode.VelocityChange);
-            if(boostVelocity){
+            if(boostVelocity)
+            {
                 collided = collision.gameObject.GetComponent<Rigidbody>();
                 Invoke("boostvelocity",.1f);
+                Debug.Log("ImpactBooster2222222");
             }
         }
     }

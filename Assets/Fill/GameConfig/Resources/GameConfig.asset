@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba27782d7cb665f488646b9d87c56f76, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  Characters:
+  - {fileID: 11400000, guid: b170526c49f01b84293ee700de221bfd, type: 2}
+  - {fileID: 11400000, guid: c09d1ff9201605b4dbb4b5bef0cf4bb0, type: 2}
+  - {fileID: 11400000, guid: f780c7d1304a59c45b4b163afb285465, type: 2}
+  - {fileID: 11400000, guid: b8e2942f1957aa04886ff01ae1d3eadc, type: 2}
+  - {fileID: 11400000, guid: 1676651be391636418b53cd14eba7525, type: 2}
+  RaceConfig:
+    StartRaceTime: 5
+    FinishRaceTime: 3
