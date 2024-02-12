@@ -8,6 +8,7 @@ public class LeaderboardScreen : MonoBehaviour
     [SerializeField] private LeaderboardElement UiElementPrefab;
     private SignalBus _signalBus;
     private List<LeaderboardElement> characters = new List<LeaderboardElement>();
+    private float accumulatedTime;
 
     private void Awake()
     {
@@ -42,9 +43,13 @@ public class LeaderboardScreen : MonoBehaviour
 
     private void FixedUpdate()
     {
+        accumulatedTime += Time.fixedDeltaTime;
+        if(accumulatedTime < 0.5f) return;
+        accumulatedTime = 0;
+        
         characters.Sort((a, b) => 
-            b.CharacterMono.BodyTransform.position.x.CompareTo
-                (a.CharacterMono.BodyTransform.position.x));
+            (int)b.CharacterMono.BodyTransform.position.x.CompareTo
+                ((int)a.CharacterMono.BodyTransform.position.x));
         
         for (int i = 0; i < characters.Count; i++)
         {

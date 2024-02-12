@@ -14,3 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterColor: {r: 0, g: 0.7900572, b: 1, a: 1}
   Prefab: {fileID: 3800078723104369977, guid: 9129173b096357b48bdda518e5208379, type: 3}
+  RunForce: 1500
+  ClimbingForce: 5800
+  Jump:
+    Angle: 90
+    ForceMode: 1
+    JumpForce: 75
+    minVelocityX: 5
+  KnockoutTime: 3
