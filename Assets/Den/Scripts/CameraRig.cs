@@ -19,6 +19,23 @@ public class CameraRig : MonoBehaviour
 
 
     private Vector3 _basePosition;
+    private SignalBus _signalBus;
+
+    private void Awake()
+    {
+        _signalBus = ServiceContainer.Resolve<SignalBus>();
+        _signalBus.Subscribe<CharacterSpawnedSignal>(OnCharacterSpawned,this);
+    }
+
+    private void OnDestroy()
+    {
+        _signalBus.UnsubscribeFromAll(this);
+    }
+
+    private void OnCharacterSpawned(CharacterSpawnedSignal signal)
+    {
+        playersList.Add(signal.CharacterMono.BodyTransform);
+    }
 
     private void Start()
     {
@@ -57,6 +74,8 @@ public class CameraRig : MonoBehaviour
 
     private float PlayersMinX()
     {
+        if (playersList.Count == 0)
+            return 0;
         var minX = Mathf.Infinity;
         foreach (var player in playersList)
         {

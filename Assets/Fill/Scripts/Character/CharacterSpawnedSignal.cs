@@ -1,7 +1,8 @@
 public struct CharacterSpawnedSignal
 {
-    public CharacterSpawnedSignal(Character character)
+    public readonly CharacterMono CharacterMono;
+    public CharacterSpawnedSignal(CharacterMono characterMono)
     {
-        
+        CharacterMono = characterMono;
     }
 }

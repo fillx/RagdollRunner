@@ -19,5 +19,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8e2942f1957aa04886ff01ae1d3eadc, type: 2}
   - {fileID: 11400000, guid: 1676651be391636418b53cd14eba7525, type: 2}
   RaceConfig:
-    StartRaceTime: 5
+    StartRaceTime: 3
     FinishRaceTime: 3

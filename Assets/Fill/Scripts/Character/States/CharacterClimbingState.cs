@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ActiveRagdoll;
+using UnityEngine;
 
 public class CharacterClimbingState : MonoBaseState<CharacterStateMachine.CharacterState>
 {
@@ -9,6 +10,8 @@ public class CharacterClimbingState : MonoBaseState<CharacterStateMachine.Charac
     private readonly Animator _animator;
     
     private readonly int Moving = Animator.StringToHash("moving");
+    private readonly CharacterMono _character;
+    private readonly PhysicsJointController _bodyJointController;
 
     public CharacterClimbingState(CharacterStateMachine.CharacterState key, CharacterStateMachine context) : base(key)
     {
@@ -17,23 +20,27 @@ public class CharacterClimbingState : MonoBaseState<CharacterStateMachine.Charac
         _transform = _context.transform;
         _raycast = _context.CharacterRaycast;
         _animator = context.Animator;
+        _character = context.CharacterMono;
+        _bodyJointController = context.BodyJointController;
     }
 
     public override CharacterStateMachine.CharacterState GetNextState()
     {
         if (_raycast.isContactWithClimbing == false) return CharacterStateMachine.CharacterState.Run;
+        if (_bodyJointController.isContact) return CharacterStateMachine.CharacterState.Falling;
         return CharacterStateMachine.CharacterState.Climbing;
     }
 
     public override void OnEnter()
     {
         _animator.SetBool(Moving, true);
-        Debug.Log("ClimbingState");
+        //Debug.Log("ClimbingState");
     }
 
     public override void OnUpdate()
     {
-        _rigidbody.AddForce(_transform.up *6000 * Time.fixedDeltaTime);
+        var climbingForce = _character.Config.ClimbingForce;
+        _rigidbody.AddForce(_transform.up * climbingForce * Time.fixedDeltaTime);
         _rigidbody.AddForce(_transform.forward *1000 * Time.fixedDeltaTime);
     }
 }

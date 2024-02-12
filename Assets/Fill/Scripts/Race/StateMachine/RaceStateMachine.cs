@@ -1,7 +1,9 @@
 using System;
+using UnityEngine;
 
 public class RaceStateMachine : MonoStateMachine<RaceStateMachine.RaceState>
 {
+   public Transform FinishLine;
    public SignalBus SignalBus;
    public RaceConfig RaceConfig => GameConfig.Instance.RaceConfig;
    

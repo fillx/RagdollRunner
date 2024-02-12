@@ -29,7 +29,7 @@ public class CharacterSpawner : MonoBehaviour
             
             var config = characters[i];
             var instance = Instantiate(config.Prefab,point.position, point.rotation);
-            instance.Initialize(config);
+            instance.Construct(config);
             _signalBus.FireSignal(new CharacterSpawnedSignal(instance));
         }
     }

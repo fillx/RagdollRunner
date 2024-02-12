@@ -1,4 +1,5 @@
 using _4_Scripts.Core;
+using UnityEngine;
 
 public class GamePrepareRaceState : MonoBaseState<RaceStateMachine.RaceState>
 {
@@ -19,9 +20,14 @@ public class GamePrepareRaceState : MonoBaseState<RaceStateMachine.RaceState>
         accumulatedTime = 0;
     }
 
+    public override void OnEnter()
+    {
+        _signalBus.FireSignal(new RacePrepareSignal(_raceConfig.StartRaceTime));
+    }
+
     public override RaceStateMachine.RaceState GetNextState()
     {
-        accumulatedTime++;
+        accumulatedTime+=Time.deltaTime;
         if (accumulatedTime < _raceConfig.StartRaceTime)
             return RaceStateMachine.RaceState.PrepareRace;
            return RaceStateMachine.RaceState.Race;

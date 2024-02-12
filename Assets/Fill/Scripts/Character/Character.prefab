@@ -2602,6 +2602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterBody: {fileID: 5759817219979873496}
+  CharacterTriggerListener: {fileID: 1689473824}
 --- !u!114 &117138625677909439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2614,10 +2615,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f239458caf283124ba809ecd03c94fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Character: {fileID: 0}
+  CharacterMono: {fileID: 3800078723104369977}
   Rigidbody: {fileID: 6082206893103561060}
   Animator: {fileID: 5492456789511276835}
-  PhysicsJointController: {fileID: 3221882420681091103}
+  BodyJointController: {fileID: 3221882420681091103}
+  GrabScript: {fileID: 412960356852938517}
   CharacterRaycast: {fileID: 117138625677909440}
   TriggerListener: {fileID: 1689473824}
 --- !u!114 &117138625677909440
@@ -2635,7 +2637,9 @@ MonoBehaviour:
   Transform: {fileID: 5350028678201837474}
   Size: {x: 0.5, y: 2, z: 1}
   Offset: {x: 0.8, y: -0.3, z: 0}
+  TryCrabbingDistance: 2
   isContactWithClimbing: 0
+  isTryCrabbing: 0
 --- !u!1 &2919206666458726526
 GameObject:
   m_ObjectHideFlags: 0
@@ -7000,7 +7004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6799e8d1321d28f4cb7e7490ced82da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isJump: 0
 --- !u!1 &7967328029157896332
 GameObject:
   m_ObjectHideFlags: 0

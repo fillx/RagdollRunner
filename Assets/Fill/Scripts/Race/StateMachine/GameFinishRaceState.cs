@@ -6,15 +6,18 @@ internal class GameFinishRaceState : MonoBaseState<RaceStateMachine.RaceState>
 {
     private float accumulatedTime;
     private readonly RaceConfig _raceConfig;
+    private readonly SignalBus _signalBus;
 
     public GameFinishRaceState(RaceStateMachine.RaceState key, RaceStateMachine context) : base(key)
     {
         _raceConfig = context.RaceConfig;
+        _signalBus = context.SignalBus;
     }
 
     public override void OnEnter()
     {
-        Dbg.LogYellow(nameof(GameFinishRaceState));
+        //Dbg.LogYellow(nameof(GameFinishRaceState));
+        _signalBus.FireSignal(new RaceFinishedSignal());
         accumulatedTime = 0;
     }
 

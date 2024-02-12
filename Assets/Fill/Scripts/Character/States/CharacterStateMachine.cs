@@ -1,13 +1,15 @@
-using System;
 using ActiveRagdoll;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CharacterStateMachine : MonoStateMachine<CharacterStateMachine.CharacterState>
 {
-    public Character Character;
+    public CharacterMono CharacterMono;
     public Rigidbody Rigidbody;
     public Animator Animator;
-    public PhysicsJointController PhysicsJointController;
+    [Header("Body")]
+    public PhysicsJointController BodyJointController;
+    public GrabScript GrabScript;
     public CharacterRaycast CharacterRaycast;
     public CharacterTriggerListener TriggerListener;
     public SignalBus SignalBus;
@@ -17,10 +19,11 @@ public class CharacterStateMachine : MonoStateMachine<CharacterStateMachine.Char
         Run,
         Falling,
         Jump,
-        Climbing
+        Climbing,
+        Grabbed
     }
 
-    private void Awake()
+    public void Awake()
     {
         SignalBus = ServiceContainer.Resolve<SignalBus>();
         States.Add(CharacterState.Idle, new CharacterIdleState(CharacterState.Idle, this));
@@ -28,6 +31,7 @@ public class CharacterStateMachine : MonoStateMachine<CharacterStateMachine.Char
         States.Add(CharacterState.Falling, new CharacterFallingState(CharacterState.Falling, this));
         States.Add(CharacterState.Climbing, new CharacterClimbingState(CharacterState.Climbing, this));
         States.Add(CharacterState.Jump, new CharacterJumpState(CharacterState.Jump, this));
+        States.Add(CharacterState.Grabbed, new CharacterGrabbedState(CharacterState.Grabbed, this));
      
         
         CurrentState = States[CharacterState.Idle];

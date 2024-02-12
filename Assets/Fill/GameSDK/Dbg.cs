@@ -51,7 +51,7 @@
             Log(message, Color.cyan);
         }
 
-        [Conditional("ENABLE_DEBUG")]
+        //[Conditional("ENABLE_DEBUG")]
         public static void LogMagenta(string message)
         {
             Log(message, Color.magenta);

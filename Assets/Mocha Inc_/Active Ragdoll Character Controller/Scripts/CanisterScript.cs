@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,12 @@ public class CanisterScript : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            impactForce = 0;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -42,7 +49,7 @@ public class CanisterScript : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision){
-        Debug.Log("Canister impact : "+ collision.relativeVelocity.magnitude);
+        //Debug.Log("Canister impact : "+ collision.relativeVelocity.magnitude);
         if(collision.relativeVelocity.magnitude >= impactForce && !isActive){
             isActive = true;
             audioSource.Play();
