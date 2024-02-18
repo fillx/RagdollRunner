@@ -8,7 +8,7 @@ namespace GameSDK.Scripts.Race
         public static int Runs { get; private set; }
         public static void StartRun(int targetRunCount)
         {
-            if (Runs >= targetRunCount)
+            if (Runs >= targetRunCount || Runs == 0)
             {
                 Runs = 0;
                 PlayerPrefs.DeleteAll();
