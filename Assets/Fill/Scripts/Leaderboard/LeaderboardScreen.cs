@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class LeaderboardScreen : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
-    [SerializeField] private LeaderboardElement UiElementPrefab;
+    [FormerlySerializedAs("uiElement2Prefab")] [FormerlySerializedAs("UiElementPrefab")] [SerializeField] private LeaderboardElement uiElementPrefab;
     private SignalBus _signalBus;
     private List<LeaderboardElement> characters = new List<LeaderboardElement>();
     private float accumulatedTime;
