@@ -16,7 +16,7 @@ public class LeaderboardPanel : MonoBehaviour
         }
         
         characters.Sort((a, b) => 
-           b.Score.CompareTo(b.Score));
+           b.Score.CompareTo(a.Score));
         
         Sequence sequence = DOTween.Sequence();
 
