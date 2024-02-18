@@ -28,6 +28,7 @@ public class CharacterTriggerListener : MonoBehaviour
         {
             Debug.Log("Finished");
             _signalBus.FireSignal(new CharacterFinishedSignal(_characterMono));
+            gameObject.SetActive(false);
         }
         
         if (other.CompareTag(tag: "Unhook"))

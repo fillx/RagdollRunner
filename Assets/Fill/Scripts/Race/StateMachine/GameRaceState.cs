@@ -1,13 +1,18 @@
+using System.Collections.Generic;
 using _4_Scripts.Core;
 using GameSDK.Scripts.Character;
 
 public class GameRaceState : MonoBaseState<RaceStateMachine.RaceState>
 {
+    private readonly RaceStateMachine _context;
     private readonly SignalBus _signalBus;
     private RaceStateMachine.RaceState currentState;
+    private List<CharacterMono> finishedCharacters;
 
     public GameRaceState(RaceStateMachine.RaceState key, RaceStateMachine context) : base(key)
     {
+        finishedCharacters = new List<CharacterMono>(context.RaceCharacters.Count);
+        _context = context;
         _signalBus = context.SignalBus;
     }
 
@@ -20,13 +25,16 @@ public class GameRaceState : MonoBaseState<RaceStateMachine.RaceState>
     }
     public override void OnExit()
     {
+        _signalBus.FireSignal(new RaceFinishedSignal(finishedCharacters));
         _signalBus.Unsubscribe<CharacterFinishedSignal>(this);
     }
     
+    
     private void OnCharacterFinishedSignal(CharacterFinishedSignal signal)
     {
-        Dbg.LogYellow($"Player with color: {signal.Character.Config.CharacterColor} Finished");
-        currentState = RaceStateMachine.RaceState.FinishRace;
+        finishedCharacters.Add(signal.Character);
+        if (finishedCharacters.Count == _context.RaceCharacters.Count)
+            currentState = RaceStateMachine.RaceState.FinishRace;
     }
 
 

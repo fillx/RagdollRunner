@@ -1,4 +1,5 @@
 using GameSDK;
+using GameSDK.Scripts.Race;
 using UnityEngine;
 
 public class CharacterSpawner : MonoBehaviour

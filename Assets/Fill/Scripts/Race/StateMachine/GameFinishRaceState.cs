@@ -17,7 +17,6 @@ internal class GameFinishRaceState : MonoBaseState<RaceStateMachine.RaceState>
     public override void OnEnter()
     {
         //Dbg.LogYellow(nameof(GameFinishRaceState));
-        _signalBus.FireSignal(new RaceFinishedSignal());
         accumulatedTime = 0;
     }
 

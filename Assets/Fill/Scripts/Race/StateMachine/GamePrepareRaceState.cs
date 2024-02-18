@@ -1,4 +1,5 @@
 using _4_Scripts.Core;
+using GameSDK.Scripts.Race;
 using UnityEngine;
 
 public class GamePrepareRaceState : MonoBaseState<RaceStateMachine.RaceState>
@@ -7,6 +8,7 @@ public class GamePrepareRaceState : MonoBaseState<RaceStateMachine.RaceState>
     private readonly RaceConfig _raceConfig;
 
     private float accumulatedTime;
+    private static int runCount;
 
     public GamePrepareRaceState(RaceStateMachine.RaceState key, RaceStateMachine contexts) : base(key)
     {
@@ -22,6 +24,7 @@ public class GamePrepareRaceState : MonoBaseState<RaceStateMachine.RaceState>
 
     public override void OnEnter()
     {
+        RaceControlService.StartRun(_raceConfig.NumberOfRun);
         _signalBus.FireSignal(new RacePrepareSignal(_raceConfig.StartRaceTime));
     }
 

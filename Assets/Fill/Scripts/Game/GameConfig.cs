@@ -13,4 +13,6 @@ public struct RaceConfig
 {
     public float StartRaceTime;
     public float FinishRaceTime;
+    public int NumberOfRun;
+    public int[] ScoreReward;
 }

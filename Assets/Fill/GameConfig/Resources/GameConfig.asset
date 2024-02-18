@@ -20,4 +20,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1676651be391636418b53cd14eba7525, type: 2}
   RaceConfig:
     StartRaceTime: 3
-    FinishRaceTime: 3
+    FinishRaceTime: 7
+    NumberOfRun: 3
+    ScoreReward: 64000000500000003c0000002800000014000000
